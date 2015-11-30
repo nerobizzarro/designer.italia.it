@@ -6966,7 +6966,7 @@ footer {
  *  Bootstrap tweaks
  *  -----------------
  */
-main {
+#main {
   min-height: 500px;
   min-height: 50rem; }
 
