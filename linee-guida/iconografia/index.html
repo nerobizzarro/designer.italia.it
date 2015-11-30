@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="/styles/combined-3317a78431.css">
+    <link rel="stylesheet" href="/styles/combined-fbf887ae92.css">
 
     <!--[if lt IE 9]>
     <script src="/scripts/combined-94bd8f59ad.i8.js"></script>
@@ -156,7 +156,7 @@
 <!-- La dimensione minima di un'icona è di 30dp -->
 <!-- ![](/images/tavola_31.png) -->
 <p>Il framework CSS Bootstrap incorpora invece le <a href="http://glyphicons.com/">icone del set glyphicons</a>.
-É opportuno utilizzare solo icone e immagini che siano realmente necessari alla comprensione delle informazioni da parte dell&#39;utente. Evitare elementi decorativi non essenziali.</p>
+È opportuno utilizzare solo icone e immagini che siano realmente necessari alla comprensione delle informazioni da parte dell&#39;utente. Evitare elementi decorativi non essenziali.</p>
 <h3 id="badge">Badge</h3>
 <pre><code class="lang-markup">&lt;p&gt;Commenti &lt;span class=&quot;badge&quot;&gt;4&lt;/span&gt;&lt;/p&gt;
 </code></pre>
@@ -165,15 +165,21 @@
   &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;Profilo utente&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
-<pre><code class="lang-markup">&lt;i class=&quot;ita-colore-blu-italia-50 glyphicon glyphicon-camera badge-container&quot;&gt;
+<pre><code class="lang-markup">&lt;span class=&quot;ita-colore-blu-italia-50 badge-container&quot;&gt;
+  &lt;span class=&quot;glyphicon glyphicon-camera&quot; aria-hidden=&quot;true&quot; title=&quot;foto&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;badge&quot;&gt;4&lt;/span&gt;
-&lt;/i&gt;
-&lt;i class=&quot;ita-colore-blu-italia-50 glyphicon glyphicon-facetime-video badge-container&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;foto&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;ita-colore-blu-italia-50 badge-container&quot;&gt;
+  &lt;span class=&quot;glyphicon glyphicon-facetime-video&quot; aria-hidden=&quot;true&quot; title=&quot;video&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;badge&quot;&gt;4&lt;/span&gt;
-&lt;/i&gt;
-&lt;i class=&quot;ita-colore-blu-italia-50 glyphicon glyphicon-picture badge-container&quot;&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;video&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;ita-colore-blu-italia-50 badge-container&quot;&gt;
+  &lt;span class=&quot;glyphicon glyphicon-picture&quot; aria-hidden=&quot;true&quot; title=&quot;immagini&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;badge&quot;&gt;4&lt;/span&gt;
-&lt;/i&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;immagini&lt;/span&gt;
+&lt;/span&gt;
 </code></pre>
 <!-- ![html](/images/tavola_32.png) -->
 

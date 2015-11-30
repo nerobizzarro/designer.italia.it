@@ -6349,7 +6349,7 @@ option {
   right: 20px;
   text-align: center;
   text-decoration: none;
-  z-index: 2147483647;
+  z-index: 9999;
   background: #00264d;
   border: 2px solid white;
   border-radius: 50% 50% 50% 50%;
@@ -6385,6 +6385,8 @@ p .badge {
   margin-top: -0.5rem; }
 
 .badge-container {
+  position: relative;
+  display: inline-block;
   margin-right: 24px;
   margin-right: 2.4rem; }
   .badge-container .glyphicon, .badge-container .scrollto_top span:before, .scrollto_top .badge-container span:before, .badge-container .navgoco li > a > span:after, .navgoco .badge-container li > a > span:after, .badge-container.glyphicon, .scrollto_top span.badge-container:before, .navgoco li > a > span.badge-container:after {
@@ -7157,6 +7159,10 @@ article table {
 .lg-example-code {
   margin: 10px 0 20px 0;
   margin: 1rem 0 2rem 0; }
+
+.lg-example-result .nav {
+  padding-bottom: 10px;
+  padding-bottom: 1rem; }
 
 .lg-example-result .well {
   border: none;
