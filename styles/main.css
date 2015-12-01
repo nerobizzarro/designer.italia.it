@@ -2,7 +2,6 @@
 /* ------------------------------
  * Colori - classi riutilizzabili
 /* ------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,900,700italic,700,600italic,600,400italic);
 .ita-colore-testo-principale {
   color: #1C2024; }
 
@@ -285,10 +284,12 @@
 .ita-bg-colore-testa-di-moro {
   background-color: #967E6A; }
 
-/*  Titillium web font 
- *  ----------------------
- *  Esclusivamente per il sito delle linee guida vengono importati tutti gli stili del web font;
- *  si consiglia di rivedere il seguente import limitando le famiglie del font utilizzate nel sito.
+/* 
+ * FIX: utilizzare <link> nel template HTML
+ *    http://stackoverflow.com/questions/12316501/including-google-web-fonts-link-or-import
+ */
+/* 
+ * @import url(//fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,900,700italic,700,600italic,600,400italic);
  */
 /* ITA  */
 /* ITA  */
@@ -6214,40 +6215,40 @@ blockquote, blockquote p {
  *  Riduce di una percentuale le dimensioni degli header 
  *  sugli schermi più piccoli
  */
-h1 {
+h1, .h1 {
   line-height: 86px;
   line-height: 8.6rem;
   font-weight: bold; }
   @media screen and (max-width: 768px) {
-    h1 {
+    h1, .h1 {
       font-size: 5rem;
       line-height: 6rem; } }
 
-h2 {
+h2, .h2 {
   line-height: 72px;
   line-height: 7.2rem;
   font-weight: bold; }
   @media screen and (max-width: 768px) {
-    h2 {
+    h2, .h2 {
       font-size: 4rem;
       line-height: 5rem; } }
 
-h3 {
+h3, .h3 {
   line-height: 48px;
   line-height: 4.8rem;
   font-weight: bold; }
 
-h4 {
+h4, .h4 {
   line-height: 28px;
   line-height: 2.8rem;
   font-weight: bold; }
 
-h5 {
+h5, .h5 {
   line-height: 28px;
   line-height: 2.8rem;
   font-variant: small-caps; }
 
-h6 {
+h6, .h6 {
   font-weight: bold;
   line-height: 28px;
   line-height: 2.8rem; }
@@ -7041,9 +7042,12 @@ article table {
   background: #66a5e3;
   min-height: 100px;
   min-height: 10rem; }
-  .lg-partecipa p {
-    margin: auto; }
-    .lg-partecipa p i {
+  .lg-partecipa p, .lg-partecipa h3 {
+    margin: auto;
+    font-size: 20px;
+    font-size: 2rem;
+    font-weight: normal; }
+    .lg-partecipa p i, .lg-partecipa h3 i {
       font-size: 15px;
       font-size: 1.5rem; }
   .lg-partecipa a {

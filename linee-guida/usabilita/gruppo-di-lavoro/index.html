@@ -19,8 +19,15 @@
     <meta name="description" content="Progettare il design dei siti web della Pubblica Amministrazione (versione alfa)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <link rel="stylesheet" href="/styles/combined-cf7200e2cf.css">
+    <!--  
+        Titillium web font 
+       *********************
+       Esclusivamente per il sito delle linee guida vengono importati tutti gli stili del web font;
+       si consiglia di rivedere il seguente link limitando le famiglie del font utilizzate nel sito.
+     -->
+    <link href='//fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300italic,300,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css' />
+    
+    <link rel="stylesheet" href="/styles/combined-f5441210e5.css">
 
     <!--[if lt IE 9]>
     <script src="/scripts/combined-94bd8f59ad.i8.js"></script>
@@ -35,16 +42,11 @@
     <![endif]-->
 
     <div class="skiplink sr-only">
-      <div class="container-smaller">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <ul>
-              <li><a href="#main" tabindex="800">Vai al Contenuto</a></li>
-              <li><a href="#footer" tabindex="800">Raggiungi il Footer</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <ul>
+        <li><a href="#main" tabindex="800">Vai al Contenuto</a></li>
+        <li><a href="#menu" tabindex="800">Vai alla navigazione del sito (sommario delle linee guida)</a></li>
+        <li><a href="#footer" tabindex="800">Vai al Footer</a></li>
+      </ul>
     </div>
 
     <div class="nav-banner">
@@ -64,7 +66,7 @@
     <div class="container" id="page_top">
 
 
-<nav class="navbar navbar-default navbar-fixed-top hidden-print" id="navbar">
+<header class="navbar navbar-default navbar-fixed-top hidden-print" id="navbar">
 
   <!-- START * https://github.com/tholman/github-corners * -->
   <a href="https://github.com/italia-it/designer.italia.it" class="github-corner" 
@@ -102,7 +104,7 @@
     </div><!-- row -->
 
   </div><!-- navbar header container -->
-</nav>
+</header>
 
 
 <div id="main" class="row row-offcanvas row-offcanvas-left">
@@ -111,8 +113,11 @@
      href="https://github.com/italia-it/designer.italia.it">vai su github</a>-->
   
   <div class="col-md-4 sidebar-offcanvas" id="sidebar">
-    <nav class="hidden-print" 
+    <nav class="hidden-print" id="menu"
      data-spy="_affix" data-offset-top="0" data-offset-bottom="250">
+  
+  <h3 class="sr-only">Sommario delle linee Guida (navigazione del sito):</h3>
+  
   <ul class="nav navgoco">
     <li>  <a class="btn btn-link" href="/assets/agid-bootstrap.zip">
         <i class="glyphicon glyphicon-download-alt"></i> scarica i componenti</a> </li>
@@ -167,13 +172,14 @@
 
 </div><!-- container -->
 
-<div class="lg-partecipa clearfix hidden-print">
-  <p>
+<aside class="lg-partecipa clearfix hidden-print">
+  <h3>
     <i class="glyphicon glyphicon-edit"> </i>
     Vuoi contribuire ? Partecipa creando una issue
     sul <a href="https://github.com/italia-it/designer.italia.it">repository GitHub</a><br>
-  </p>
-</div>
+  </h3>
+</aside>
+
 <footer id="footer" class="hidden-print">
   <div class="container">
     <div class="row">
