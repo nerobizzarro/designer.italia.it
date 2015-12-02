@@ -6336,6 +6336,17 @@ option {
   option:hover {
     background-color: #65DDE0; }
 
+.skiplink li {
+  list-style-type: none; }
+
+.skiplink--focused {
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  background: white;
+  text-align: center;
+  width: 100%; }
+
 /*
  * Bottone scroll to top
  * --------------------------------------------------------------
@@ -6970,6 +6981,9 @@ footer {
 #main {
   min-height: 500px;
   min-height: 50rem; }
+
+[tabindex="0"]:focus {
+  outline: none; }
 
 .container {
   min-width: 200px; }
