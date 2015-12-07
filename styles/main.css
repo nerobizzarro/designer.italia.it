@@ -6347,6 +6347,10 @@ option {
   text-align: center;
   width: 100%; }
 
+.skiplink--focused a:focus {
+  background: #0066CC !important;
+  color: #fff !important; }
+
 /*
  * Bottone scroll to top
  * --------------------------------------------------------------
@@ -7024,6 +7028,20 @@ article table {
  *  Stili custom del sito delle Linee Guida
  *  ---------------------------------------
  */
+#main a {
+  text-decoration: underline; }
+  #main a:focus {
+    background: #0066CC !important;
+    color: #fff !important; }
+
+#footer a:focus {
+  outline: #ff8c00 solid 3px !important;
+  background: none !important;
+  color: inherit !important; }
+
+#main a.btn {
+  text-decoration: none; }
+
 .lg-modal {
   margin: auto;
   background: white;
