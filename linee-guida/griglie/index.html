@@ -156,73 +156,78 @@
   <article class="col-sm-12 col-md-8" id="main" tabindex="0">
     <h2>Griglie</h2>
     <p>All’interno dello spazio a disposizione l’organizzazione del contenuto deve essere strutturata seguendo un sistema di griglie responsive per mantenere una coerente esperienza utente. La griglia rappresenta la struttura invisibile che permette di organizzare i contenuti della pagina.</p>
-<p>Una griglia di impaginazione consiste in colonne di testo (o immagini) separate da spazi intercolonna e contornate dai margini della pagina. Le dimensioni delle colonne della griglia saranno flessibili in funzione della viewport. </p>
+<p>Una griglia di impaginazione consiste in colonne di testo (o immagini) separate da spazi <em>intercolonna</em> e contornate dai margini della pagina. Le dimensioni delle colonne della griglia saranno flessibili in funzione del viewport (ovvero, la dimensione totale della regione di sito visibile all&#39;interno del browser, delimitata dall&#39;ampiezza del browser stesso). </p>
+<h3 id="costruzione">Come costruire una griglia conforme</h3>
+
+<p>Utilizzando Bootstrap come framework, prendiamo in considerazione il suo &quot;grid system&quot; come strumento di elezione per creare le griglie di impaginazione.</p>
+<ul>
+<li>Le righe (che hanno come classe <code>.row</code> ) devono essere collocate all&#39;interno di un elemento <code>.container</code> a larghezza fissa oppure di un elemento <code>.container</code> fluido.</li>
+<li>Gli elementi di riga <code>.row</code> devono essere utilizzati esclusivamente per creare gruppi orizzontali di colonne.</li>
+<li>Soltanto dentro le colonne possono essere annidati ulteriori sistemi di &quot;righe e colonne&quot;</li>
+<li>Il contenuto (testo e foto) va collocato all&#39;interno delle colonne.</li>
+<li>Le colonne avranno come prefisso di classe <code>.col-*</code></li>
+<li>Le colonne rappresentano &quot;porzioni&quot; della larghezza complessiva del contenitore.</li>
+<li>Ogni colonna potrà essere identificata con una classe specifica per determinare se quella porzione di spazio sia attribuibile, ad esempio, solo a dispositivi desktop, o tablet, o smartphone. Per questo motivo la classe di ciascuna colonna sarà sempre dotata sia di un suffisso corrispondente al <em>breakpoint</em> di riferimento (in ordine crescente dal minore al maggiore: <code>-xs-, -sm-, -md-, -lg-</code>), sia del valore corrispondente ad una frazione di 12, che rappresenta la porzione di larghezza occupata da quella colonna.
+Queste classi si applicano per intercettare dispositivi con larghezza dello schermo maggiore o uguale alle dimensioni del breakpoint di riferimento. Pertanto, la classe <code>.col-md-*</code> stabilirà la larghezza di quella colonna sia per il breakpoint corrispondente al valore &quot;-md-&quot; sia per breakpoint superiori (a meno che non sia presente anche una classe <code>.col-lg-*</code>).
+
+Per esempio: in una riga potrebbero esserci tre elementi <code>.col-xs-4</code> che corrispondono a tre colonne di larghezza pari a 4/12 (un terzo) ciascuna. Indicando <code>-xs-</code> come suffisso di breakpoint, significa che quella colonna avrà la stessa proporzione sia sui display più piccoli che su quelli più grandi. Se invece nella stessa riga posizioneremo tre elementi con classe <code>.col-lg-4</code> significa che ciascuna delle tre colonne occuperà uno spazio pari a 4/12 SOLTANTO sui display più grandi, mentre con viewport inferiori quella stessa colonna occuperà il 100% dello spazio, dato che non è stata definita nessuna proporzione per i breakpoint inferiori.</li>
+<li>Ogni colonna può avere un &quot;interspazio&quot; o <em>gutter</em>, che viene attribuito via css tramite <code>padding</code></li>
+</ul>
+
+
+<h4 id="costruzione">Impostazioni della griglia di costruzione consigliata</h4>
+
+
 <div class="table-responsive">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Schermi molto piccoli &lt; 320px</th>
-<th>Schermi piccoli (tablet)</th>
-<th>Desktop 1170px</th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-  <td>Breakpoint</td>
-  <td>Auto</td>
-  <td>750px</td>
-  <td>1170px</td>
-</tr>
-
-<tr>
-  <td>Larghezza 1 colonna</td>
-  <td>Auto</td>
-  <td>720px</td>
-  <td>1040px</td>
-</tr>
-
-<tr>
-  <td>Larghezza 2 colonne</td>
-  <td></td>
-  <td>352px</td>
-  <td>512px</td>
-</tr>
-
-<tr>
-  <td>Larghezza 3 colonne</td>
-  <td></td>
-  <td>229px</td>
-  <td>336px</td>
-</tr>
-
-<tr>
-  <td>Larghezza 4 colonne</td>
-  <td></td>
-  <td>168px</td>
-  <td>248px</td>
-</tr>
-
-<tr>
-  <td>Interspazio colonna</td>
-  <td></td>
-  <td>16px</td>
-  <td></td>
-</tr>
-
-<tr>
-  <td>Margini della pagina</td>
-  <td>16px</td>
-  <td>24pxpx</td>
-  <td></td>
-</tr>
-
-</tbody>
-</table>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th> Schermi molto piccoli <small>Smartphone ( &lt; 768px)</small> </th>
+        <th> Schermi piccoli <small>Tablet ( ≥ 768px)</small> </th>
+        <th> Schermi media dimensione <small>Netbook ( ≥ 992px)</small> </th>
+        <th> Schermi grandi <small>Desktop ( ≥ 1440px)</small> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="text-nowrap" scope="row">Larghezza del .container</th>
+        <td>Auto</td>
+        <td>Auto</td>
+        <td>Auto</td>
+        <td>1440px <small>compresi i &quot;padding&quot; esterni del .container</small></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">padding-left e padding-right del .container</th>
+        <td>16 px</td>
+        <td>16 px</td>
+        <td>24 px</td>
+        <td>24 px</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Prefisso classe colonna</th>
+        <td><code>.col-xs-</code></td>
+        <td><code>.col-sm-</code></td>
+        <td><code>.col-md-</code></td>
+        <td><code>.col-lg-</code></td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Numero di colonne</th>
+        <td colspan="4">12</td>
+      </tr>
+      <tr>
+        <th class="text-nowrap" scope="row">Intercolonna o &quot;gutter&quot;</th>
+        <td colspan="4">16 px</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<p>Sul formato mobile è prevista la collocazione di una sola colonna con un margine di 16 px. Sui successivi break, tablet e desktop, si potrà optare per un’impaginazione basata su un numero maggiore di colonne (2, 3 o 4) la cui larghezza è in percentuale della viewport, con uno spazio fisso intercolonna di 16 px e un margine di pagina di 24 px. </p>
+
+
+<p>Sul formato smartphone è prevista la collocazione di una sola colonna.
+Sui successivi breakpoint (tablet e desktop), si potrà optare per un’impaginazione basata su un numero maggiore di colonne, con uno spazio fisso intercolonna (&quot;gutter&quot;) di 16 px.
+Il <code>.container</code> avrà dei margini esterni (&quot;padding&quot;) di 24 px per i breakpoint &quot;desktop&quot; e &quot;netbook&quot; e di 16 px per i breakpoint &quot;tablet&quot; e &quot;smartphone&quot;.</p>
 <!--
 <figure>
   ![](/images/tavola_2.png)
@@ -314,6 +319,8 @@ applicando il CSS di Bootstrap e utilizzando le classi <code>container, row, col
       <ul class="col-xs-12 footer__links clearfix">
         <li><a href="/linee-guida/privacy-policy/" title="privacy policy">Privacy</a></li>
         <li><a href="/linee-guida/note-legali/" title="note legali">Note legali</a></li>
+        <li><a href="/linee-guida/credits/" title="credits">Credits</a></li>
+        <li><a href="/linee-guida/contatti/" title="credits">Contatti</a></li>
       </ul>
     </div>
   </div>
